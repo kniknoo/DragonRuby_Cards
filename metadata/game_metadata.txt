@@ -1,0 +1,6 @@
+devid="kniknoo"
+devtitle="Nicholas Rake"
+gameid="Klondike"
+gametitle="Klondike"
+version=0.1
+icon=metadata/icon.png
