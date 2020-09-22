@@ -11,7 +11,8 @@ class Deck < Array
                 { name: 'J',  value: 11 }, { name: 'Q',  value: 12 },
                 { name: 'K',  value: 13 }].freeze
 
-  FACES = '🂡 🂢 🂣 🂤 🂥 🂦 🂧 🂨 🂩 🂪 🂫 🂭 🂮 🃑 🃒 🃓 🃔 🃕 🃖 🃗 🃘 🃙 🃚 🃛 🃝 🃞 🂱 🂲 🂳 🂴 🂵 🂶 🂷 🂸 🂹 🂺 🂻 🂽 🂾 🃁 🃂 🃃 🃄 🃅 🃆 🃇 🃈 🃉 🃊 🃋 🃍 🃎'.split(' ').to_enum
+  FACES = '🂡 🂢 🂣 🂤 🂥 🂦 🂧 🂨 🂩 🂪 🂫 🂭 🂮 🃑 🃒 🃓 🃔 🃕 🃖 🃗 🃘 🃙 🃚 🃛 🃝 🃞
+  🂱 🂲 🂳 🂴 🂵 🂶 🂷 🂸 🂹 🂺 🂻 🂽 🂾 🃁 🃂 🃃 🃄 🃅 🃆 🃇 🃈 🃉 🃊 🃋 🃍 🃎'.split(' ')
 
   def initialize
     #super
@@ -23,18 +24,11 @@ class Deck < Array
     SUITS.cycle(deck_count).flat_map do |s|
       SOL_VALUES.map.with_index(0) do |v, i|
         x += 1
-        v[:face] = FACES.next
+        v[:face] = FACES[x]#.next
         self[x] = v.merge(s)
 
       end
     end
   end
 end
-# deck = Deck.new
-# p deck[20]
-# deck.shuffle!
- #hand1 = deck.pop(13)
- #hand2 = deck.pop(13)
- #deck.each {|d| puts "#{d[:name]} of #{d[:suit]}  :\n  #{d[:face]}" }
-# ♠♣♥♦
 # 🂠
