@@ -99,6 +99,10 @@ class CardPile < CardGroup
     ((@x + 130 + (@cards.last(3).size - 1) * 10)..(@x + 130 + (@cards.last(3).size - 1) * 10 + @w)).include?(@mouse.x) &&
       (@y..(@y + @h)).include?(@mouse.y)
   end
+
+  def reset_pile
+    @reserve = @cards.slice!(0, @cards.size)
+  end
 end
 
 class CardSpread
@@ -107,7 +111,7 @@ class CardSpread
   def initialize(x, y, type, number)
     @x = x
     @y = y
-    @groups = number.times.map { |i, _e| type.new(@x + 50 * i, @y, 37, 50) }
+    @groups = number.times.map { |i, _e| type.new(@x + 70 * i, @y, 37, 50) }
   end
 
   def show

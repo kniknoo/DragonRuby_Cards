@@ -6,10 +6,10 @@ class Board
   def initialize
     @deck = Deck.new
     @card = { w: 37, h: 50 }
-    @bu = { x: 335, y: 550 }
-    @co = { x: 350, y2: 500 }
+    @bu = { x: 385, y: 550 }
+    @co = { x: 400, y2: 500 }
     @columns = CardSpread.new(@co[:x], 400, CardCascade, 7)
-    @st = { x: 675, y: 550, w: 40, h: 60 }
+    @st = { x: 625, y: 550, w: 40, h: 60 }
     @backup = CardPile.new(@bu[:x], @bu[:y], @card[:w], @card[:h])
     @suits = CardSpread.new(@st[:x], @st[:y], CardStack, 4)
     deal
