@@ -11,6 +11,7 @@ $deja_vu = 'fonts/DejaVuSans.ttf'
 $player = Player.new
 def tick(args)
   args.outputs.solids << [0, 0, 1280, 720, 0, 0, 0]
+  args.outputs.labels << [0, 360, "Change Mind", 8, 0, [255,255,255]]
   $board.show
   $player.display_hand
   return unless $player.clicks?
